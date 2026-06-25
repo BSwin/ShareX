@@ -147,7 +147,7 @@ namespace ShareX.ScreenCaptureLib
             Bitmap bmp = Image.FromHbitmap(hBitmap);
             NativeMethods.DeleteObject(hBitmap);
 
-            return bmp;
+            return HDRScreenshotCorrection.ApplyIfNeeded(bmp, rect);
         }
 
         private Bitmap CaptureRectangleManaged(Rectangle rect)
