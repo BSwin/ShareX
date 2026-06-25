@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
@@ -200,17 +201,60 @@ namespace ShareX.ScreenCaptureLib
             {
                 return new RegionCaptureOptions()
                 {
+                    QuickCrop = options.QuickCrop,
+                    MinimumSize = options.MinimumSize,
+                    RegionCaptureActionRightClick = options.RegionCaptureActionRightClick,
+                    RegionCaptureActionMiddleClick = options.RegionCaptureActionMiddleClick,
+                    RegionCaptureActionX1Click = options.RegionCaptureActionX1Click,
+                    RegionCaptureActionX2Click = options.RegionCaptureActionX2Click,
+                    DetectWindows = options.DetectWindows,
                     DetectControls = options.DetectControls,
-                    SnapSizes = options.SnapSizes,
+                    UseDimming = options.UseDimming,
+                    BackgroundDimStrength = options.BackgroundDimStrength,
+                    UseCustomInfoText = options.UseCustomInfoText,
+                    CustomInfoText = options.CustomInfoText,
+                    SnapSizes = options.SnapSizes != null ? new List<SnapSize>(options.SnapSizes) : new List<SnapSize>(),
+                    ShowInfo = options.ShowInfo,
                     ShowMagnifier = options.ShowMagnifier,
                     UseSquareMagnifier = options.UseSquareMagnifier,
                     MagnifierPixelCount = options.MagnifierPixelCount,
                     MagnifierPixelSize = options.MagnifierPixelSize,
                     ShowCenterCrosshair = options.ShowCenterCrosshair,
                     ShowCrosshair = options.ShowCrosshair,
+                    UseLightResizeNodes = options.UseLightResizeNodes,
+                    EnableAnimations = options.EnableAnimations,
+                    IsFixedSize = options.IsFixedSize,
+                    FixedSize = options.FixedSize,
+                    ShowFPS = options.ShowFPS,
+                    FPSLimit = options.FPSLimit,
+                    MenuIconSize = options.MenuIconSize,
+                    MenuLocked = options.MenuLocked,
+                    RememberMenuState = options.RememberMenuState,
+                    MenuCollapsed = options.MenuCollapsed,
+                    MenuPosition = options.MenuPosition,
+                    InputDelay = options.InputDelay,
+                    SwitchToDrawingToolAfterSelection = options.SwitchToDrawingToolAfterSelection,
+                    SwitchToSelectionToolAfterDrawing = options.SwitchToSelectionToolAfterDrawing,
+                    ActiveMonitorMode = options.ActiveMonitorMode,
                     AnnotationOptions = options.AnnotationOptions,
+                    LastRegionTool = options.LastRegionTool,
+                    LastAnnotationTool = options.LastAnnotationTool,
+                    LastEditorTool = options.LastEditorTool,
+                    ImageEditorStartMode = options.ImageEditorStartMode,
+                    ImageEditorWindowState = options.ImageEditorWindowState,
+                    ZoomToFitOnOpen = options.ZoomToFitOnOpen,
+                    EditorAutoCopyImage = options.EditorAutoCopyImage,
+                    AutoCloseEditorOnTask = options.AutoCloseEditorOnTask,
+                    ShowEditorPanTip = options.ShowEditorPanTip,
+                    ImageEditorResizeInterpolationMode = options.ImageEditorResizeInterpolationMode,
+                    EditorNewImageSize = options.EditorNewImageSize,
+                    EditorNewImageTransparent = options.EditorNewImageTransparent,
+                    EditorNewImageBackgroundColor = options.EditorNewImageBackgroundColor,
+                    EditorCanvasColor = options.EditorCanvasColor,
+                    ImageEffectPresets = options.ImageEffectPresets,
+                    SelectedImageEffectPreset = options.SelectedImageEffectPreset,
+                    ColorPickerOptions = options.ColorPickerOptions,
                     ScreenColorPickerInfoText = options.ScreenColorPickerInfoText,
-                    ActiveMonitorMode = options.ActiveMonitorMode
                 };
             }
         }

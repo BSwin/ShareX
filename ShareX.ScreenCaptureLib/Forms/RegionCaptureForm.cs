@@ -1604,7 +1604,8 @@ namespace ShareX.ScreenCaptureLib
             {
                 if (ShapeManager.IsCurrentShapeValid)
                 {
-                    rect = CaptureHelpers.ClientToScreen(ShapeManager.CurrentRectangle.Round());
+                    Rectangle region = ShapeManager.CurrentRectangle.Round();
+                    rect = new Rectangle(region.X + ScreenBounds.X, region.Y + ScreenBounds.Y, region.Width, region.Height);
                 }
             }
             else if (Result == RegionResult.Fullscreen)
